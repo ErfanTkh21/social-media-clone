@@ -7,7 +7,7 @@ import { useState } from "react";
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="">
+    <div className="md:hidden">
       <div
         className="flex flex-col gap-[4.5] cursor-pointer"
         onClick={() => setIsOpen((prev) => !prev)}
