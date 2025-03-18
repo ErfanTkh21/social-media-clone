@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
+import { ClerkLoaded, ClerkLoading, SignedIn, SignedOut } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -49,6 +50,13 @@ const Navbar = () => {
       </div>
       {/* Right */}
       <div className="w-[30%] flex items-center gap-4 xl:gap-8 justify-end">
+        <ClerkLoading>
+          <div className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-gray-500 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white" />
+        </ClerkLoading>
+        <ClerkLoaded>
+          <SignedIn>Signed In</SignedIn>
+          <SignedOut>Signed Out</SignedOut>
+        </ClerkLoaded>
         <MobileMenu />
       </div>
     </div>
